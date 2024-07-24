@@ -5,6 +5,11 @@ body {
   
 }
 
+.centerContainer h2 {
+  color: blue;
+  font-size: 4rem;
+}
+
 .centerContainer {
     
     background: rgb(243,162,162);
@@ -33,6 +38,11 @@ body {
     background-color: white;
   }
 
+  .titleBox img {
+    max-height: 100px;
+    padding-right: 10px;
+  }
+
   .signupBox {
     display: flex;
     justify-content: center;
@@ -40,4 +50,37 @@ body {
     width: 70%;
     border: 3px solid green;
     background-color: white;
+  }
+
+  .welcomeBox {
+    display: block;
+    justify-content: center;
+    height: 400px;
+    width: 70%;
+    border: 3px solid green;
+    background-color: white;
+  }
+
+  #welcomeHeader {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    
+  }
+
+  #welcomeChoices {
+    background-color: aquamarine;
+    width: 100%;
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+    
+  }
+
+  #btn_rules {
+   
+    
+  }
+  #btn_register {
+  
   }
