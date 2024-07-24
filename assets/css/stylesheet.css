@@ -1,6 +1,8 @@
 body {
     background: rgb(2,0,36);
     background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(9,38,121,1) 45%, rgba(0,212,255,1) 100%);
+    
+  
 }
 
 .centerContainer {
@@ -12,15 +14,30 @@ body {
     align-items: center;
     height: 85vh;
     width: 85%;
-    border: 3px solid green;
-    margin: auto;
+    padding-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:3%;
+    flex-wrap: wrap;
     
 }
 
-.center {
+.titleBox {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 200px;
+    height: 100px;
+    width: 55%;
+    border-radius: 8px;
+    border: 1px solid black;
+    background-color: white;
+  }
+
+  .signupBox {
+    display: flex;
+    justify-content: center;
+    height: 400px;
+    width: 70%;
     border: 3px solid green;
+    background-color: white;
   }
