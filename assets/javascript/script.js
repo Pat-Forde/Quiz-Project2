@@ -50,3 +50,25 @@ function displayResults (){
 
 let btn4 = document.getElementById("btn_results");
 btn4.addEventListener("click", displayResults);
+
+// Modal for introduction and overview
+var modal = document.getElementById("overviewModal");
+
+// Modal Opening triggered by button press in welcome div
+var btnModal = document.getElementById("btn_rules");
+btnModal.onclick = function() {
+  modal.style.display = "block";
+}
+
+// Modal closes when clicking on the span containing the X
+var spanModalClose = document.getElementsByClassName("close")[0];
+spanModalClose.onclick = function() {
+  modal.style.display = "none";
+}
+
+// Modal also closes if outside the modal window is clicked
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
