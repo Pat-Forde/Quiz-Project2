@@ -72,3 +72,8 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
+
+let btnStart = document.getElementById("btn_register");
+btnStart.addEventListener("click", displaySignup);
+
+let playerName = document.getElementById("playerName").value;
