@@ -76,4 +76,10 @@ window.onclick = function(event) {
 let btnStart = document.getElementById("btn_register");
 btnStart.addEventListener("click", displaySignup);
 
+function nameEntered () {
+
 let playerName = document.getElementById("playerName").value;
+console.log (playerName);
+displayQuiz ();
+
+}
