@@ -127,3 +127,20 @@ body {
   justify-content: center;
   text-align: center;
 }
+
+/* Questions and Answers Buttons Styling */
+
+
+.hide {
+  display: none; /* Sets a class to hide buttons as needed */
+}
+
+.correct {
+  background-color: green; /* Correct answers will turn green */
+  color: white;
+}
+
+.wrong {
+  background-color: #dc3545; /* Wrong answers will turn red */
+  color: white;
+}

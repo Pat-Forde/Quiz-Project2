@@ -81,7 +81,7 @@ function nameEntered () {
 let playerName = document.getElementById("playerName").value;
 console.log (playerName);
 displayQuiz ();
-document.getElementById("currentScore").innerHTML = "Welcome "  + playerName + " Let's get started!"
+document.getElementById("welcomePlayer").innerHTML = "Welcome "  + playerName + " Here is your first question"
 
 }
 
