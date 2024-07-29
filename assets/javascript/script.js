@@ -1,8 +1,18 @@
+document.addEventListener('DOMContentLoaded', () => {
+  next_btn.classList.add('hide'); // Initially hide the 'Next' button
+});
 
 const welcomeDiv = document.getElementById("welcome");
 const signupDiv = document.getElementById("user_signup");
 const quizDiv = document.getElementById("active_quiz");
 const resultsDiv = document.getElementById("results");
+const startButton = document.getElementById('start_btn');
+const nextButton = document.getElementById('next_btn');
+const questionContainerElement = document.getElementById('question-container');
+const questionElement = document.getElementById('question');
+const answerButtonsElement = document.getElementById('answer_buttons');
+let shuffledQuestions ;
+let currentQuestionIndex;
 
 
 
