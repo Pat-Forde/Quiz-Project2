@@ -8,6 +8,8 @@
    
 </head>
 <body>
+
+   
 <!---4 Divs setup for Welcome, Capture User Details, Quiz and Results. Only one  div will display at a time-->
 
 <!---Welcome Box-->
@@ -26,10 +28,12 @@
                 </div>
             </div>
         </div>
-
+       
+    
    </div> 
 
 <!---Capture User Details-->
+
     <div id="user_signup" class="centerContainer">
         <div class="titleBox">
             <img src="assets/images/quizlogo.png"> <h2>Risky Quizness</h2>
@@ -38,41 +42,32 @@
             <div id="signupHeader"><h1>Please Enter Your Name!</h1></div>
             
             <div>First Name: <input type="text" id="playerName" > <button onclick="nameEntered()">Submit</button></div>
+           
         </div>
     </div>
 
 <!---Quiz Running-->
     <div id="active_quiz" class="centerContainer">
+        
         <div class="titleBox">
             <img src="assets/images/quizlogo.png"> <h2>Risky Quizness</h2>
         </div>
+        
         <div class="welcomeBox">
             <p id="welcomePlayer"></p>
-            <!--Start Of Quiz Structure -->
-            
-            <div id="questionContainer">
-                <div id="question">Populate questions in this div</div>
-                <div id="answer_buttons" class="answer_buttons">
-                    <!-- Wil need to generate these with each question -->
-                </div>
-            </div>
-            <div id="controls">
-                <button id="start_btn">Start</button>
-                <button id="next_btn">Next</button>
-            </div>
-            
-
-
-
-
-
-
-            <!--End Of Quiz Structure-->        </div>
+            <!--  This code was used to test if a simple javascript quiz sourced from 
+            https://simplestepscode.com/javascript-quiz-tutorial/ will work within the structure of the
+            existing project.......
+            <div id="quiz"></div>
+            <button id="submit">Get Results</button>
+            <div id="results"></div>
+            <div id="questionContainer"></div>  --> 
+        </div>
         
     </div>
 
 <!---Results Div--->
-    <div id="results" class="centerContainer">
+    <div id="resultsDisplay" class="centerContainer">
         <div class="titleBox">
             <img src="assets/images/quizlogo.png"> <h2>Risky Quizness</h2>
         </div>
