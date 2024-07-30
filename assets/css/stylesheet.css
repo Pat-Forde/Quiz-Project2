@@ -68,13 +68,31 @@ body {
   }
 
   #welcomeChoices {
-    background-color: aquamarine;
+    
     width: 100%;
     display: flex;
     justify-items: center;
     justify-content: center;
     
   }
+
+  .welcomeButton {
+    padding: 10px 15px;
+    margin: 8px;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .welcomeButton:hover {
+    background-color: #6969f3;
+  }
+
+
+
 
   /* Game Overview Modal hidden by default */
 .modal {
@@ -127,6 +145,43 @@ body {
   justify-content: center;
   text-align: center;
 }
+
+/* Styling for quiz container */
+
+#question-container {
+  margin-bottom: 20px;
+}
+
+#question {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.btn-grid {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 10px;
+}
+
+.quizButton {
+  padding: 10px 15px;
+  background-color: blue;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.quizButton:hover {
+  background-color: #6969f3;
+}
+
+
+
+
+
+
 
 /* Questions and Answers Buttons Styling */
 
