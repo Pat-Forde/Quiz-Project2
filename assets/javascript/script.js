@@ -99,6 +99,29 @@ document.getElementById("welcomePlayer").innerHTML = "Welcome "  + playerName + 
 
 }
 
+/* When start button is pressed 
+Hide the start button adding hide class to it.
+Shuffle the questions for randomness each game.
+Set Current questions to 0 or reset if already played.
+Remove the hide class from the question container so it displays (Will hide when results are called)
+Call the next question function */
+
+startButton.addEventListener('click', startGame);
+
+function startGame() {
+  startButton.classList.add('hide');
+  shuffledQuestions = questions.sort(() => Math.random() - .5);
+  currentQuestionIndex = 0;
+  questionContainerElement.classList.remove('hide');
+  setNextQuestion();
+}
+
+
+
+
+
+
+
 /* Quiz Questions */
 
 const questions = [
