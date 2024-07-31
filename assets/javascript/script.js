@@ -21,6 +21,8 @@ const answerButtonsElement = document.getElementById('answers');
 let shuffledQuestions, currentQuestionIndex;
 
 
+
+
 /* Functions to display each div - initially for testing purposes linking to buttons placed on index page */
 function displayWelcome (){
     welcomeDiv.style.display = "flex"
@@ -116,8 +118,23 @@ function startGame() {
   setNextQuestion();
 }
 
+/* Update question container with next question. 
+Create a new button and display it for each answer.
+Give each button a data of setting of correct or not. */
 
-
+function showQuestion(question) {
+    questionElement.innerText = question.question;
+    question.answers.forEach(answer => {
+        const button = document.createElement('button');
+        button.innerText = answer.text;
+        button.classList.add('btn');
+        if (answer.correct) {
+            button.dataset.correct = answer.correct;
+        }
+        button.addEventListener('click', () => selectAnswer(button));
+        answerButtonsElement.appendChild(button);
+    });
+  }
 
 
 
