@@ -11,15 +11,19 @@ const signupDiv = document.getElementById("user_signup");
 const quizDiv = document.getElementById("active_quiz");
 const resultsDiv = document.getElementById("resultsDisplay");
 
-
 const startButton = document.getElementById('start-btn');
 const nextButton = document.getElementById('next-btn');
 const questionContainerElement = document.getElementById('question-container');
-const questionElement = document.getElementById('questions');
-const answerButtonsElement = document.getElementById('answers');
+const questionElement = document.getElementById('question');
+const answerButtonsElement = document.getElementById('answer-buttons');
+const quizAppElement = document.getElementById('quiz-app');
+const resultsElement = document.createElement('div');
+resultsElement.setAttribute('id', 'results');
+resultsElement.classList.add('results', 'hide');
+quizAppElement.appendChild(resultsElement);
 
 let shuffledQuestions, currentQuestionIndex;
-
+let score = 0;
 
 
 
@@ -108,7 +112,9 @@ Set Current questions to 0 or reset if already played.
 Remove the hide class from the question container so it displays (Will hide when results are called)
 Call the next question function */
 
+
 startButton.addEventListener('click', startGame);
+
 
 function startGame() {
   startButton.classList.add('hide');
@@ -118,23 +124,55 @@ function startGame() {
   setNextQuestion();
 }
 
-/* Update question container with next question. 
-Create a new button and display it for each answer.
-Give each button a data of setting of correct or not. */
+/* When next button is pressed
+Add 1 to the current question count.
+Call the next question function.
+*/
+
+nextButton.addEventListener('click', () => {
+    currentQuestionIndex++;
+    setNextQuestion();
+  });
+
+
+/*
+Call resetState function to clear the quiz interface, ensuring a fresh start for each question.
+Call showQuestion to populate the quiz with the next question and answers
+*/
+
+function setNextQuestion() {
+  resetState();
+  showQuestion(shuffledQuestions[currentQuestionIndex]);
+}
+
+function resetState() {
+  clearStatusClass(document.body);
+  nextButton.classList.add('hide');
+  while (answerButtonsElement.firstChild) {
+      answerButtonsElement.removeChild(answerButtonsElement.firstChild);
+  }
+}
+
+/* 
+Update the text of the question element with the current question.
+Create a button display for each answer.
+Assign a data attribute to button with correct answer for evaluation.
+Add an event listener to each button to handle answer selection.
+*/
 
 function showQuestion(question) {
-    questionElement.innerText = question.question;
-    question.answers.forEach(answer => {
-        const button = document.createElement('button');
-        button.innerText = answer.text;
-        button.classList.add('btn');
-        if (answer.correct) {
-            button.dataset.correct = answer.correct;
-        }
-        button.addEventListener('click', () => selectAnswer(button));
-        answerButtonsElement.appendChild(button);
-    });
-  }
+  questionElement.innerText = question.question;
+  question.answers.forEach(answer => {
+      const button = document.createElement('button');
+      button.innerText = answer.text;
+      button.classList.add('btn');
+      if (answer.correct) {
+          button.dataset.correct = answer.correct;
+      }
+      button.addEventListener('click', () => selectAnswer(button));
+      answerButtonsElement.appendChild(button);
+  });
+}
 
 
 
