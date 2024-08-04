@@ -206,7 +206,7 @@ document.addEventListener('DOMContentLoaded', () => {
         score=score+10;
     
 
-    /* Set a small delay before next button displays
+    /* Set a small delay before next button displays and quiz finish is called if last question
     If questions max amount reached call the end of quiz function
     Max Amount of 3 at the moment */
   
@@ -230,7 +230,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 
-  /* Clears the buttons classes so colors from answers reset for next question */
+  /* Clears the buttons classes so colours from answers reset for next question */
   
   function clearStatusClass(element) {
     element.classList.remove('correct');
@@ -242,12 +242,14 @@ document.addEventListener('DOMContentLoaded', () => {
   function concludeQuiz() {
     questionContainerElement.classList.add('hide');
     nextButton.classList.add('hide');
+    welcomePlayer.classList.add('hide');
   
     resultsElement.classList.remove('hide');
     resultsElement.innerHTML = `
-        <h2>Quiz Completed!</h2>
-        <p>Your score: ${score} out of ${shuffledQuestions.length}</p>
-        <button onclick="restartQuiz()">Restart Quiz</button>
+        <h3>Quiz Completed!</h3>
+        <p>You scored: ${score} out of a possible 200</p>
+        <button class="restartButton" onclick="restartQuiz()">Restart Quiz</button>
+       
     `;
     quizAppElement.appendChild(resultsElement);
   }
@@ -259,6 +261,11 @@ document.addEventListener('DOMContentLoaded', () => {
     score = 100;
     currentQuestionIndex = 0;
     startGame();
+    welcomePlayer.classList.remove('hide');
+    let playerName = document.getElementById("playerName").value;
+    document.getElementById("welcomePlayer").innerHTML = "Welcome back "  + playerName + ". "
+
+
   }
   
   

@@ -6,17 +6,9 @@ body {
     font-style: normal;
 }
 
-.concert-one-regular {
-  font-family: "Concert One", sans-serif;
-  font-weight: 200;
-  font-style: normal;
-}
-
-
-
 .centerContainer h2 {
   color: #3567af;
-  font-size: 4rem;
+  font-size: 3vw;
 }
 
 .centerContainer {   
@@ -60,8 +52,11 @@ body {
     background-color: white;
   }
 
+  /* This is the center box container for Welcome Div1 and User Input Div2 */
   .welcomeBox {
-    display: block;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
     height: 400px;
     width: 70%;
@@ -69,6 +64,21 @@ body {
     border: 1px solid black;
     background-color: white;
   }
+
+  /* Quiz Div 3 slightly amended styling */
+  .quizBox {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 400px;
+    width: 70%;
+    border-radius: 8px;
+    border: 1px solid black;
+    background-color: white;
+  }
+
+
 
   #welcomeHeader {
     width: 100%;
@@ -98,9 +108,23 @@ body {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
+    font-size: 20px;
+  }
+
+  .restartButton {
+    padding: 10px 15px;
+    margin: 8px;
+    background-color: #3567af;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 15px;
+
   }
   
-  .welcomeButton:hover, #start-btn:hover, #next-btn:hover {
+  .welcomeButton:hover, #start-btn:hover, #next-btn:hover, .restartButton:hover {
     background-color: #c41c1c;
   }
 
@@ -174,7 +198,7 @@ input[type=text] {
 #userMessage {
   justify-content: center;
   text-align: center;
-  font-size: 22px;
+  font-size: 30px;
 }
 
 #question-container {
@@ -213,17 +237,37 @@ input[type=text] {
 
 
 #controls {
+  display: flex;
   justify-content: center;
   margin-top: 20px;
 }
 
 #controls.show {
   display: flex;
+  justify-content: center;
 }
 
+#results  {
+  
+  align-items: center;
+  text-align: center;
+  font-size: 3vh;
+  
+}
 
+#results p {
+  
+  align-items: center;
+  text-align: center;
+  font-size: 3vh;
+}
 
+#results {
 
+align-items: center;
+  text-align: center;
+  font-size: 3vh;
+}
 
 /* Questions and Answers Buttons Styling */
 
@@ -245,3 +289,4 @@ input[type=text] {
   background-color: #46198d; /* Pass Button highlighted  */
   color: white;
 }
+
