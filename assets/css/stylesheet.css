@@ -1,7 +1,18 @@
 body {
     background: rgb(2,0,36);
     background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(9,38,121,1) 45%, rgba(0,212,255,1) 100%);
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
+
+.concert-one-regular {
+  font-family: "Concert One", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+
 
 .centerContainer h2 {
   color: #3567af;
@@ -63,6 +74,10 @@ body {
     width: 100%;
     justify-content: center;
     text-align: center;
+  }
+
+  #welcomeHeader h3 {
+    color: #3567af;
   }
 
   #welcomeChoices {
@@ -127,6 +142,8 @@ body {
   cursor: pointer;
 }
 
+/* Signup Div Styles */
+
 .signupBox {
   background-color: aquamarine;
   width: 100%;
@@ -141,10 +158,30 @@ body {
   text-align: center;
 }
 
+#nameInput {
+  justify-content: center;
+  text-align: center;
+}
+
+input[type=text] {
+  border: 2px solid black;
+  border-radius: 4px;
+  min-height: 30px;
+}
+
 /* Styling for quiz container */
+
+#userMessage {
+  justify-content: center;
+  text-align: center;
+  font-size: 22px;
+}
 
 #question-container {
   margin-bottom: 20px;
+  width: 100%;
+  justify-content: center;
+  text-align: center;
 }
 
 #question {

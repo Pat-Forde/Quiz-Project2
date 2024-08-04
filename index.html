@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="assets/css/stylesheet.css">
-   
+<!--Google Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Concert+One&family=Fira+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -18,7 +21,10 @@
             <img src="assets/images/quizlogo.png"> <h2>Risky Quizness</h2>
         </div>
         <div class="welcomeBox">
-            <div id="welcomeHeader"><h1>Welcome To Risky Quizness!</h1></div>
+            <div id="welcomeHeader">
+                <h1>Welcome To Risky Quizness!</h1>
+                <h3>The quiz where you need to be 100% sure of your answers.</h3>
+            </div>
             <div id="welcomeChoices">
                 <div>
                     <button id="btn_rules" class="welcomeButton">Overview</button>
@@ -40,8 +46,7 @@
         </div>
         <div class="welcomeBox">
             <div id="signupHeader"><h1>Please Enter Your Name!</h1></div>
-            
-            <div>First Name: <input type="text" id="playerName" > <button onclick="nameEntered()" class="welcomeButton">Submit</button></div>
+            <div id="nameInput">First Name: <input type="text" id="playerName" > <button onclick="nameEntered()" class="welcomeButton">Submit</button></div>
            
         </div>
     </div>
@@ -54,11 +59,11 @@
         </div>
         
         <div class="welcomeBox">
-            <p id="welcomePlayer"></p>
+            <div id="userMessage"><p id="welcomePlayer"></p></div>
             <div id="quiz-app">
                 
                 <div id="question-container">
-                    <div id="question">Questions will go here</div>
+                    <div id="question">Click Start when you are ready - Good Luck!</div>
                     <div id="answer-buttons" class="btn-grid">
                         <!-- Answer buttons will be added here dynamically -->
                     </div>
