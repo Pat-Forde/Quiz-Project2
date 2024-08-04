@@ -199,3 +199,8 @@ body {
   background-color: #dc3545; /* Wrong answers will turn red */
   color: white;
 }
+
+.pass {
+  background-color: #46198d; /* Pass Button highlighted  */
+  color: white;
+}

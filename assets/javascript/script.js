@@ -183,19 +183,26 @@ document.addEventListener('DOMContentLoaded', () => {
     Array.from(answerButtonsElement.children).forEach(button => {
         button.disabled = true;
         setStatusClass(button, button.dataset.correct);
+        
     });
   
 
 
+
     const correct = selectedButton.dataset.correct;
     if (correct) {
-        score = score+10;
-    }
+        score = score+20;}
+    else score = score-5;
+    
     setStatusClass(selectedButton, correct);
+
+    /* Set up scoring for pressing Pass button 
+    A pass is worth 5 points but is set as 10 to override the -5 from not getting answer correct above*/
 
     const pass = selectedButton.dataset.pass;
     if (pass)
-        score=score+3;
+        score=score+10;
+    
 
     /* Set a small delay before next button displays
     If questions max amount reached call the end of quiz function
@@ -219,7 +226,8 @@ document.addEventListener('DOMContentLoaded', () => {
         element.classList.add('wrong');
     }
   }
-  
+
+
   /* Clears the buttons classes so colors from answers reset for next question */
   
   function clearStatusClass(element) {
