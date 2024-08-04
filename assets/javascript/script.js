@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
   quizAppElement.appendChild(resultsElement);
   
   let shuffledQuestions, currentQuestionIndex;
-  let score = 0;
+  let score = 100;
   
   
   
@@ -167,14 +167,17 @@ document.addEventListener('DOMContentLoaded', () => {
         if (answer.correct) {
             button.dataset.correct = answer.correct;
         }
+        if (answer.pass) {
+            button.dataset.pass = answer.pass;
+        }
         button.addEventListener('click', () => selectAnswer(button));
         answerButtonsElement.appendChild(button);
     });
   }
   
   /*  Diables the answer buttons so first click is final.
-  Changes buttons colors via CSS class green = correct red = wrong ansers
-  Set a small delay before next button displays*/ 
+  Changes buttons colors via CSS class green = correct red = wrong answers
+  */ 
   
   function selectAnswer(selectedButton) {
     Array.from(answerButtonsElement.children).forEach(button => {
@@ -182,14 +185,24 @@ document.addEventListener('DOMContentLoaded', () => {
         setStatusClass(button, button.dataset.correct);
     });
   
+
+
     const correct = selectedButton.dataset.correct;
     if (correct) {
-        score++;
+        score = score+10;
     }
     setStatusClass(selectedButton, correct);
+
+    const pass = selectedButton.dataset.pass;
+    if (pass)
+        score=score+3;
+
+    /* Set a small delay before next button displays
+    If questions max amount reached call the end of quiz function
+    Max Amount of 3 at the moment */
   
     setTimeout(() => {
-        if (shuffledQuestions.length > currentQuestionIndex + 1) {
+        if (3 > currentQuestionIndex + 1) {
             nextButton.classList.remove('hide');
         } else {
             concludeQuiz();
@@ -233,7 +246,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
   function restartQuiz() {
     resultsElement.classList.add('hide');
-    score = 0;
+    score = 100;
     currentQuestionIndex = 0;
     startGame();
   }
@@ -249,7 +262,8 @@ document.addEventListener('DOMContentLoaded', () => {
             { text: 'Rome', correct: false },
             { text: 'Paris', correct: true },
             { text: 'Madrid', correct: false },
-            { text: 'Berlin', correct: false }
+            { text: 'Berlin', correct: false },
+            { text: 'Pass', pass: true } 
         ]
     },
     {
@@ -258,7 +272,8 @@ document.addEventListener('DOMContentLoaded', () => {
             { text: 'Venus', correct: false },
             { text: 'Jupiter', correct: false },
             { text: 'Mars', correct: true },
-            { text: 'Saturn', correct: false }
+            { text: 'Saturn', correct: false },
+            { text: 'Pass', pass: true } 
         ]
     },
     {
@@ -267,7 +282,8 @@ document.addEventListener('DOMContentLoaded', () => {
             { text: 'William Shakespeare', correct: true },
             { text: 'Charles Dickens', correct: false },
             { text: 'Mark Twain', correct: false },
-            { text: 'J.K. Rowling', correct: false }
+            { text: 'J.K. Rowling', correct: false },
+            { text: 'Pass', pass: true } 
         ]
     },
     {
@@ -276,7 +292,8 @@ document.addEventListener('DOMContentLoaded', () => {
             { text: 'Elephant', correct: false },
             { text: 'Giraffe', correct: false },
             { text: 'Hippopotamus', correct: false },
-            { text: 'Blue Whale', correct: true }
+            { text: 'Blue Whale', correct: true },
+            { text: 'Pass', pass: true } 
         ]
     },
     {
@@ -285,7 +302,8 @@ document.addEventListener('DOMContentLoaded', () => {
             { text: '1', correct: false },
             { text: '2', correct: true },
             { text: '3', correct: false },
-            { text: '5', correct: false }
+            { text: '5', correct: false },
+            { text: 'Pass'}
         ]
     },
     {
@@ -294,7 +312,8 @@ document.addEventListener('DOMContentLoaded', () => {
             { text: 'O2', correct: false },
             { text: 'H2O', correct: true },
             { text: 'CO2', correct: false },
-            { text: 'HO', correct: false }
+            { text: 'HO', correct: false },
+            { text: 'Pass', pass: true } 
         ]
     },
     {
@@ -303,7 +322,8 @@ document.addEventListener('DOMContentLoaded', () => {
             { text: 'Leonardo da Vinci', correct: true },
             { text: 'Vincent van Gogh', correct: false },
             { text: 'Pablo Picasso', correct: false },
-            { text: 'Michelangelo', correct: false }
+            { text: 'Michelangelo', correct: false },
+            { text: 'Pass', pass: true } 
         ]
     },
     {
@@ -312,7 +332,8 @@ document.addEventListener('DOMContentLoaded', () => {
             { text: 'Helium', correct: false },
             { text: 'Oxygen', correct: false },
             { text: 'Hydrogen', correct: true },
-            { text: 'Carbon', correct: false }
+            { text: 'Carbon', correct: false },
+            { text: 'Pass', pass: true } 
         ]
     },
     {
@@ -321,7 +342,8 @@ document.addEventListener('DOMContentLoaded', () => {
             { text: 'Amazon', correct: false },
             { text: 'Nile', correct: true },
             { text: 'Yangtze', correct: false },
-            { text: 'Mississippi', correct: false }
+            { text: 'Mississippi', correct: false },
+            { text: 'Pass', pass: true } 
         ]
     },
     {
@@ -330,7 +352,8 @@ document.addEventListener('DOMContentLoaded', () => {
             { text: 'China', correct: false },
             { text: 'Japan', correct: true },
             { text: 'South Korea', correct: false },
-            { text: 'Thailand', correct: false }
+            { text: 'Thailand', correct: false },
+            { text: 'Pass', pass: true } 
         ]
     },
     {
@@ -339,7 +362,8 @@ document.addEventListener('DOMContentLoaded', () => {
             { text: 'Thomas Jefferson', correct: false },
             { text: 'George Washington', correct: true },
             { text: 'Abraham Lincoln', correct: false },
-            { text: 'John Adams', correct: false }
+            { text: 'John Adams', correct: false },
+            { text: 'Pass', pass: true } 
         ]
     },
     {
@@ -348,7 +372,8 @@ document.addEventListener('DOMContentLoaded', () => {
             { text: '6', correct: false },
             { text: '7', correct: false },
             { text: '8', correct: true },
-            { text: '9', correct: false }
+            { text: '9', correct: false },
+            { text: 'Pass', pass: true } 
         ]
     },
     {
@@ -357,7 +382,8 @@ document.addEventListener('DOMContentLoaded', () => {
             { text: 'Atlantic Ocean', correct: false },
             { text: 'Indian Ocean', correct: false },
             { text: 'Arctic Ocean', correct: false },
-            { text: 'Pacific Ocean', correct: true }
+            { text: 'Pacific Ocean', correct: true },
+            { text: 'Pass', pass: true } 
         ]
     },
     {
@@ -366,7 +392,8 @@ document.addEventListener('DOMContentLoaded', () => {
             { text: 'Dollar', correct: false },
             { text: 'Yen', correct: true },
             { text: 'Euro', correct: false },
-            { text: 'Pound', correct: false }
+            { text: 'Pound', correct: false },
+            { text: 'Pass', pass: true } 
         ]
     },
     {
@@ -375,7 +402,8 @@ document.addEventListener('DOMContentLoaded', () => {
             { text: 'Asia', correct: false },
             { text: 'Africa', correct: true },
             { text: 'South America', correct: false },
-            { text: 'Australia', correct: false }
+            { text: 'Australia', correct: false },
+            { text: 'Pass', pass: true } 
         ]
     },
     {
@@ -384,7 +412,8 @@ document.addEventListener('DOMContentLoaded', () => {
             { text: 'Alan Turing', correct: true },
             { text: 'Albert Einstein', correct: false },
             { text: 'Isaac Newton', correct: false },
-            { text: 'Nikola Tesla', correct: false }
+            { text: 'Nikola Tesla', correct: false },
+            { text: 'Pass', pass: true } 
         ]
     },
     {
@@ -393,7 +422,8 @@ document.addEventListener('DOMContentLoaded', () => {
             { text: '32', correct: false },
             { text: '0', correct: true },
             { text: '100', correct: false },
-            { text: '-1', correct: false }
+            { text: '-1', correct: false },
+            { text: 'Pass', pass: true } 
         ]
     },
     {
@@ -402,7 +432,8 @@ document.addEventListener('DOMContentLoaded', () => {
             { text: 'F. Scott Fitzgerald', correct: false },
             { text: 'Ernest Hemingway', correct: false },
             { text: 'Harper Lee', correct: true },
-            { text: 'John Steinbeck', correct: false }
+            { text: 'John Steinbeck', correct: false },
+            { text: 'Pass', pass: true } 
         ]
     },
     {
@@ -411,7 +442,8 @@ document.addEventListener('DOMContentLoaded', () => {
             { text: 'Oxygen', correct: false },
             { text: 'Nitrogen', correct: true },
             { text: 'Carbon Dioxide', correct: false },
-            { text: 'Argon', correct: false }
+            { text: 'Argon', correct: false },
+            { text: 'Pass', pass: true } 
         ]
     },
     {
@@ -420,7 +452,8 @@ document.addEventListener('DOMContentLoaded', () => {
             { text: 'Mercury', correct: true },
             { text: 'Venus', correct: false },
             { text: 'Earth', correct: false },
-            { text: 'Mars', correct: false }
+            { text: 'Mars', correct: false },
+            { text: 'Pass', pass: true } 
         ]
     }
   ];
