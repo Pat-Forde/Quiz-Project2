@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let playerName = document.getElementById("playerName").value;
   console.log (playerName);
   displayQuiz ();
-  document.getElementById("welcomePlayer").innerHTML = "Welcome "  + playerName + " Here is your first question"
+  document.getElementById("welcomePlayer").innerHTML = "It's great to have you here "  + playerName + ". "
   
   }
   
@@ -130,6 +130,8 @@ document.addEventListener('DOMContentLoaded', () => {
     currentQuestionIndex = 0;
     questionContainerElement.classList.remove('hide');
     setNextQuestion();
+    let playerName = document.getElementById("playerName").value;
+    document.getElementById("welcomePlayer").innerHTML = "Select an answer "  + playerName + ". "
   }
   
   /*

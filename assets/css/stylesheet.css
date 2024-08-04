@@ -74,7 +74,7 @@ body {
     
   }
 
-  .welcomeButton {
+  .welcomeButton, #start-btn, #next-btn {
     padding: 10px 15px;
     margin: 8px;
     background-color: #3567af;
@@ -85,7 +85,7 @@ body {
     transition: background-color 0.3s;
   }
   
-  .welcomeButton:hover {
+  .welcomeButton:hover, #start-btn:hover, #next-btn:hover {
     background-color: #c41c1c;
   }
 
@@ -175,15 +175,20 @@ body {
 }
 
 
+#controls {
+  justify-content: center;
+  margin-top: 20px;
+}
+
+#controls.show {
+  display: flex;
+}
 
 
 
 
 
 /* Questions and Answers Buttons Styling */
-
-
-
 
 .hide {
   display: none; /* Sets a class to hide buttons as needed */
