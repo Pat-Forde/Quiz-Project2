@@ -256,16 +256,16 @@ document.addEventListener('DOMContentLoaded', () => {
         question: 'Which planet is known as the Red Planet?',
         answers: [
             { text: 'Venus', correct: false },
-            { text: 'Mars', correct: true },
             { text: 'Jupiter', correct: false },
+            { text: 'Mars', correct: true },
             { text: 'Saturn', correct: false }
         ]
     },
     {
         question: 'Who wrote "Romeo and Juliet"?',
         answers: [
-            { text: 'Charles Dickens', correct: false },
             { text: 'William Shakespeare', correct: true },
+            { text: 'Charles Dickens', correct: false },
             { text: 'Mark Twain', correct: false },
             { text: 'J.K. Rowling', correct: false }
         ]
@@ -274,9 +274,9 @@ document.addEventListener('DOMContentLoaded', () => {
         question: 'What is the largest mammal in the world?',
         answers: [
             { text: 'Elephant', correct: false },
-            { text: 'Blue Whale', correct: true },
             { text: 'Giraffe', correct: false },
-            { text: 'Hippopotamus', correct: false }
+            { text: 'Hippopotamus', correct: false },
+            { text: 'Blue Whale', correct: true }
         ]
     },
     {
@@ -300,8 +300,8 @@ document.addEventListener('DOMContentLoaded', () => {
     {
         question: 'Who painted the Mona Lisa?',
         answers: [
-            { text: 'Vincent van Gogh', correct: false },
             { text: 'Leonardo da Vinci', correct: true },
+            { text: 'Vincent van Gogh', correct: false },
             { text: 'Pablo Picasso', correct: false },
             { text: 'Michelangelo', correct: false }
         ]
@@ -310,8 +310,8 @@ document.addEventListener('DOMContentLoaded', () => {
         question: 'Which element has the atomic number 1?',
         answers: [
             { text: 'Helium', correct: false },
-            { text: 'Hydrogen', correct: true },
             { text: 'Oxygen', correct: false },
+            { text: 'Hydrogen', correct: true },
             { text: 'Carbon', correct: false }
         ]
     },
@@ -346,8 +346,8 @@ document.addEventListener('DOMContentLoaded', () => {
         question: 'What is the square root of 64?',
         answers: [
             { text: '6', correct: false },
-            { text: '8', correct: true },
             { text: '7', correct: false },
+            { text: '8', correct: true },
             { text: '9', correct: false }
         ]
     },
@@ -355,9 +355,9 @@ document.addEventListener('DOMContentLoaded', () => {
         question: 'Which is the largest ocean on Earth?',
         answers: [
             { text: 'Atlantic Ocean', correct: false },
-            { text: 'Pacific Ocean', correct: true },
             { text: 'Indian Ocean', correct: false },
-            { text: 'Arctic Ocean', correct: false }
+            { text: 'Arctic Ocean', correct: false },
+            { text: 'Pacific Ocean', correct: true }
         ]
     },
     {
@@ -381,8 +381,8 @@ document.addEventListener('DOMContentLoaded', () => {
     {
         question: 'Who is known as the Father of Computer Science?',
         answers: [
-            { text: 'Albert Einstein', correct: false },
             { text: 'Alan Turing', correct: true },
+            { text: 'Albert Einstein', correct: false },
             { text: 'Isaac Newton', correct: false },
             { text: 'Nikola Tesla', correct: false }
         ]
@@ -400,8 +400,8 @@ document.addEventListener('DOMContentLoaded', () => {
         question: 'Who wrote "To Kill a Mockingbird"?',
         answers: [
             { text: 'F. Scott Fitzgerald', correct: false },
-            { text: 'Harper Lee', correct: true },
             { text: 'Ernest Hemingway', correct: false },
+            { text: 'Harper Lee', correct: true },
             { text: 'John Steinbeck', correct: false }
         ]
     },
@@ -417,8 +417,8 @@ document.addEventListener('DOMContentLoaded', () => {
     {
         question: 'Which planet is closest to the sun?',
         answers: [
-            { text: 'Venus', correct: false },
             { text: 'Mercury', correct: true },
+            { text: 'Venus', correct: false },
             { text: 'Earth', correct: false },
             { text: 'Mars', correct: false }
         ]
