@@ -187,7 +187,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   
 
-
+/* Set up Scoring - 20 points for a correct answer, -5 points for a wrong answer */
 
     const correct = selectedButton.dataset.correct;
     if (correct) {
