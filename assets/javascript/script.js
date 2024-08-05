@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   
   
-  
+
   const welcomeDiv = document.getElementById("welcome");
   const signupDiv = document.getElementById("user_signup");
   const quizDiv = document.getElementById("active_quiz");
