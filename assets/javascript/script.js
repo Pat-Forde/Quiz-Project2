@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const welcomeDiv = document.getElementById("welcome");
   const signupDiv = document.getElementById("user_signup");
   const quizDiv = document.getElementById("active_quiz");
-  const resultsDiv = document.getElementById("resultsDisplay");
   const startButton = document.getElementById('start-btn');
   const nextButton = document.getElementById('next-btn');
   const questionContainerElement = document.getElementById('question-container');
@@ -23,17 +22,17 @@ document.addEventListener('DOMContentLoaded', () => {
   
   /* Function to display initial div and hide the sign up and quiz divs */
   function displayWelcome (){
-      welcomeDiv.style.display = "flex"
+      welcomeDiv.style.display = "flex";
       signupDiv.style.display = "none";
       quizDiv.style.display = "none";  
   }
   
   /* Runs this first so other divs are hidden on page load */
-  displayWelcome()
+  displayWelcome();
   
   /* Display signup div and hide welcome and quiz divs */
   function displaySignup (){
-      welcomeDiv.style.display = "none"
+      welcomeDiv.style.display = "none";
       signupDiv.style.display = "flex";
       quizDiv.style.display = "none";  
   }
@@ -51,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
  /* Display quiz div and hide welcome and signup divs */
   function displayQuiz (){
-      welcomeDiv.style.display = "none"
+      welcomeDiv.style.display = "none";
       signupDiv.style.display = "none";
       quizDiv.style.display = "flex";
   }
@@ -63,35 +62,29 @@ document.addEventListener('DOMContentLoaded', () => {
   var btnModal = document.getElementById("btn_rules");
   btnModal.onclick = function() {
     modal.style.display = "block";
-  }
+  };
   
   // Modal closes when clicking on the span containing the X
   var spanModalClose = document.getElementsByClassName("close")[0];
   spanModalClose.onclick = function() {
     modal.style.display = "none";
-  }
+  };
   
   // Modal also closes if outside the modal window is clicked
   window.onclick = function(event) {
     if (event.target == modal) {
       modal.style.display = "none";
     }
-  }
+  };
   
   let btnStart = document.getElementById("btn_register");
   btnStart.addEventListener("click", displaySignup);
 
-// Get the input field
-var input = document.getElementById("myInput");
-
-
-  
   /*  Stores player name and displays it at top of quiz  */
   function nameEntered () {
   let playerName = document.getElementById("playerName").value;
-  console.log (playerName);
   displayQuiz ();
-  document.getElementById("welcomePlayer").innerHTML = "It's great to have you here "  + playerName + ". "
+  document.getElementById("welcomePlayer").innerHTML = "It's great to have you here "  + playerName + ". ";
   }
 
   /* When start button is pressed 
@@ -118,7 +111,7 @@ var input = document.getElementById("myInput");
     questionContainerElement.classList.remove('hide');
     setNextQuestion();
     let playerName = document.getElementById("playerName").value;
-    document.getElementById("welcomePlayer").innerHTML = "Select an answer "  + playerName + ". "
+    document.getElementById("welcomePlayer").innerHTML = "Select an answer "  + playerName + ". ";
   }
   
   /*
@@ -129,7 +122,7 @@ var input = document.getElementById("myInput");
   function setNextQuestion() {
     resetState();
     showQuestion(shuffledQuestions[currentQuestionIndex]);
-    document.getElementById("welcomePlayer").innerHTML = "Remember - A pass is better than a wrong answer."
+    document.getElementById("welcomePlayer").innerHTML = "Remember - A pass is better than a wrong answer.";
   }
   
   function resetState() {
@@ -193,7 +186,7 @@ var input = document.getElementById("myInput");
     setTimeout(() => {
         if (10 > currentQuestionIndex + 1) {
             nextButton.classList.remove('hide');
-            document.getElementById("welcomePlayer").innerHTML = "Your current score is " +score + " points"
+            document.getElementById("welcomePlayer").innerHTML = "Your current score is " +score + " points";
         } else {
             concludeQuiz();
         }
