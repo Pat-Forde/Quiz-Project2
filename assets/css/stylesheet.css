@@ -290,6 +290,15 @@ align-items: center;
   color: white;
 }
 
+/* Styling for taller screens / tablets (800px and above) */
+
+@media screen and (min-height: 800px) {
+  .welcomeBox, .quizBox{
+    height: 75%;
+  }
+
+}
+
 /* Styline for narrow screens (360px and below) */
 
 @media screen and (max-width: 360px) {
