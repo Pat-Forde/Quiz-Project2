@@ -182,7 +182,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     /* Set a small delay before next button displays and quiz finish is called if last question
     If questions max amount reached call the end of quiz function
-    Max Amount of 3 at the moment */
+    Uses the welcomeplayer message to provide a feedback / live score */
     setTimeout(() => {
         if (10 > currentQuestionIndex + 1) {
             nextButton.classList.remove('hide');
