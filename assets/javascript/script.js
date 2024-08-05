@@ -38,17 +38,16 @@ document.addEventListener('DOMContentLoaded', () => {
       quizDiv.style.display = "none";  
   }
   
+  /*Allow enter key to submit player name in signup */
   document.getElementById('playerName').addEventListener('keydown', function(event) {
     // Check if Enter was pressed
     if (event.keyCode === 13) {
       // Prevent the default action
       event.preventDefault();
-      
       // Trigger the button click
       document.getElementById('signupButton').click();
     }
   });
-
 
  /* Display quiz div and hide welcome and signup divs */
   function displayQuiz (){
@@ -192,7 +191,7 @@ var input = document.getElementById("myInput");
     If questions max amount reached call the end of quiz function
     Max Amount of 3 at the moment */
     setTimeout(() => {
-        if (3 > currentQuestionIndex + 1) {
+        if (10 > currentQuestionIndex + 1) {
             nextButton.classList.remove('hide');
         } else {
             concludeQuiz();
@@ -224,7 +223,7 @@ var input = document.getElementById("myInput");
     resultsElement.classList.remove('hide');
     resultsElement.innerHTML = `
         <h3>Quiz Completed!</h3>
-        <p>You scored: ${score} out of a possible 160</p>
+        <p>You scored: ${score} out of a possible 200!</p>
         <button class="restartButton" onclick="restartQuiz()">Restart Quiz</button>
         <button class="restartButton" onclick="resetQuiz()">New Player</button>
     `;
