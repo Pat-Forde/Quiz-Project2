@@ -38,6 +38,18 @@ document.addEventListener('DOMContentLoaded', () => {
       quizDiv.style.display = "none";  
   }
   
+  document.getElementById('playerName').addEventListener('keydown', function(event) {
+    // Check if Enter was pressed
+    if (event.keyCode === 13) {
+      // Prevent the default action
+      event.preventDefault();
+      
+      // Trigger the button click
+      document.getElementById('signupButton').click();
+    }
+  });
+
+
  /* Display quiz div and hide welcome and signup divs */
   function displayQuiz (){
       welcomeDiv.style.display = "none"
@@ -69,6 +81,11 @@ document.addEventListener('DOMContentLoaded', () => {
   
   let btnStart = document.getElementById("btn_register");
   btnStart.addEventListener("click", displaySignup);
+
+// Get the input field
+var input = document.getElementById("myInput");
+
+
   
   /*  Stores player name and displays it at top of quiz  */
   function nameEntered () {
@@ -77,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
   displayQuiz ();
   document.getElementById("welcomePlayer").innerHTML = "It's great to have you here "  + playerName + ". "
   }
-  
+
   /* When start button is pressed 
   Hide the start button adding hide class to it.
   Shuffle the questions for randomness each game.
