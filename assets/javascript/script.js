@@ -4,13 +4,10 @@ document.addEventListener('DOMContentLoaded', () => {
     nextButton.classList.add('hide'); 
   });
   
-  
-
   const welcomeDiv = document.getElementById("welcome");
   const signupDiv = document.getElementById("user_signup");
   const quizDiv = document.getElementById("active_quiz");
   const resultsDiv = document.getElementById("resultsDisplay");
-  
   const startButton = document.getElementById('start-btn');
   const nextButton = document.getElementById('next-btn');
   const questionContainerElement = document.getElementById('question-container');
@@ -21,47 +18,32 @@ document.addEventListener('DOMContentLoaded', () => {
   resultsElement.setAttribute('id', 'results');
   resultsElement.classList.add('results', 'hide');
   quizAppElement.appendChild(resultsElement);
-  
   let shuffledQuestions, currentQuestionIndex;
   let score = 100;
   
-  
-  
-  /* Functions to display each div - initially for testing purposes linking to buttons placed on index page */
+  /* Function to display initial div and hide the sign up and quiz divs */
   function displayWelcome (){
       welcomeDiv.style.display = "flex"
       signupDiv.style.display = "none";
-      quizDiv.style.display = "none";
-     
+      quizDiv.style.display = "none";  
   }
   
   /* Runs this first so other divs are hidden on page load */
   displayWelcome()
   
-  let btn1 = document.getElementById("btn_welcome");
-  btn1.addEventListener("click", displayWelcome);
-  
+  /* Display signup div and hide welcome and quiz divs */
   function displaySignup (){
       welcomeDiv.style.display = "none"
       signupDiv.style.display = "flex";
-      quizDiv.style.display = "none";
-     
+      quizDiv.style.display = "none";  
   }
   
-  let btn2 = document.getElementById("btn_signup");
-  btn2.addEventListener("click", displaySignup);
-  
+ /* Display quiz div and hide welcome and signup divs */
   function displayQuiz (){
       welcomeDiv.style.display = "none"
       signupDiv.style.display = "none";
       quizDiv.style.display = "flex";
-    
   }
-  
-  let btn3 = document.getElementById("btn_quiz");
-  btn3.addEventListener("click", displayQuiz);
-  
- 
   
   // Modal for introduction and overview
   var modal = document.getElementById("overviewModal");
@@ -89,14 +71,11 @@ document.addEventListener('DOMContentLoaded', () => {
   btnStart.addEventListener("click", displaySignup);
   
   /*  Stores player name and displays it at top of quiz  */
-  
   function nameEntered () {
-  
   let playerName = document.getElementById("playerName").value;
   console.log (playerName);
   displayQuiz ();
   document.getElementById("welcomePlayer").innerHTML = "It's great to have you here "  + playerName + ". "
-  
   }
   
   /* When start button is pressed 
@@ -152,7 +131,6 @@ document.addEventListener('DOMContentLoaded', () => {
   Add an event listener to each button to handle answer selection.
   */
   
-  
   function showQuestion(question) {
     questionElement.innerText = question.question;
     question.answers.forEach(answer => {
@@ -173,17 +151,13 @@ document.addEventListener('DOMContentLoaded', () => {
   /*  Diables the answer buttons so first click is final.
   Changes buttons colors via CSS class green = correct red = wrong answers
   */ 
-  
   function selectAnswer(selectedButton) {
     Array.from(answerButtonsElement.children).forEach(button => {
         button.disabled = true;
-        setStatusClass(button, button.dataset.correct);
-        
+        setStatusClass(button, button.dataset.correct);  
     });
   
-
 /* Set up Scoring - 20 points for a correct answer, -10 points for a wrong answer */
-
     const correct = selectedButton.dataset.correct;
     if (correct) {
         score = score+20;}
@@ -193,16 +167,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     /* Set up scoring for pressing Pass button 
     A pass is worth 5 points but is set as 15to override the -10 from not getting answer correct above*/
-
     const pass = selectedButton.dataset.pass;
     if (pass)
         score=score+15;
     
-
     /* Set a small delay before next button displays and quiz finish is called if last question
     If questions max amount reached call the end of quiz function
     Max Amount of 3 at the moment */
-  
     setTimeout(() => {
         if (3 > currentQuestionIndex + 1) {
             nextButton.classList.remove('hide');
@@ -210,9 +181,9 @@ document.addEventListener('DOMContentLoaded', () => {
             concludeQuiz();
         }
     }, 900); 
-   
   }
   
+  /* Adds class of correct or wrong to the answers */
   function setStatusClass(element, correct) {
     clearStatusClass(element);
     if (correct) {
@@ -222,21 +193,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-
   /* Clears the buttons classes so colours from answers reset for next question */
-  
   function clearStatusClass(element) {
     element.classList.remove('correct');
     element.classList.remove('wrong');
   }
   
   /* End of quiz function - hide questions and show results in a created element */
-  
   function concludeQuiz() {
     questionContainerElement.classList.add('hide');
     nextButton.classList.add('hide');
     welcomePlayer.classList.add('hide');
-  
     resultsElement.classList.remove('hide');
     resultsElement.innerHTML = `
         <h3>Quiz Completed!</h3>
@@ -248,7 +215,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   
   /*If restart chosen hide results, display questions and reset scores and questions couunt */
-  
   function restartQuiz() {
     resultsElement.classList.add('hide');
     score = 100;

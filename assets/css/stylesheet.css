@@ -4,6 +4,7 @@ body {
     font-family: "Roboto", sans-serif;
     font-weight: 400;
     font-style: normal;
+    color: #3567af;
 }
 
 .centerContainer h2 {
@@ -78,8 +79,6 @@ body {
     background-color: white;
   }
 
-
-
   #welcomeHeader {
     width: 100%;
     justify-content: center;
@@ -91,12 +90,10 @@ body {
   }
 
   #welcomeChoices {
-    
     width: 100%;
     display: flex;
     justify-items: center;
-    justify-content: center;
-    
+    justify-content: center; 
   }
 
   .welcomeButton, #start-btn, #next-btn {
@@ -121,7 +118,6 @@ body {
     cursor: pointer;
     transition: background-color 0.3s;
     font-size: 15px;
-
   }
   
   .welcomeButton:hover, #start-btn:hover, #next-btn:hover, .restartButton:hover {
@@ -191,6 +187,7 @@ input[type=text] {
   border: 2px solid black;
   border-radius: 4px;
   min-height: 30px;
+  font-size: 22px;
 }
 
 /* Styling for quiz container */
@@ -210,13 +207,20 @@ input[type=text] {
 
 #question {
   font-size: 24px;
+  font-weight: bold;
   margin-bottom: 10px;
+  border: 2px solid #3567af;
+  border-radius: 8px;
+  width: 85%;
+  margin: auto;
+  color: #3567af;
 }
 
 .btn-grid {
   display: grid;
   grid-template-columns: repeat(2, auto);
   gap: 10px;
+  margin-top: 10px;
 }
 
 .btn {
@@ -248,22 +252,18 @@ input[type=text] {
 }
 
 #results  {
-  
   align-items: center;
   text-align: center;
   font-size: 3vh;
-  
 }
 
 #results p {
-  
   align-items: center;
   text-align: center;
   font-size: 3vh;
 }
 
 #results {
-
 align-items: center;
   text-align: center;
   font-size: 3vh;
@@ -289,8 +289,6 @@ align-items: center;
   background-color: #46198d; /* Pass Button highlighted  */
   color: white;
 }
-
-
 
 /* Styline for narrow screens (360px and below) */
 
@@ -377,5 +375,4 @@ align-items: center;
     grid-template-columns: repeat(1, auto);
     gap: 10px;
   }
-
 }
