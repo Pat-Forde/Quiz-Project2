@@ -223,7 +223,7 @@ var input = document.getElementById("myInput");
     resultsElement.classList.remove('hide');
     resultsElement.innerHTML = `
         <h3>Quiz Completed!</h3>
-        <p>You scored: ${score} out of a possible 200!</p>
+        <p>You scored: ${score} out of a possible 300!</p>
         <button class="restartButton" onclick="restartQuiz()">Restart Quiz</button>
         <button class="restartButton" onclick="resetQuiz()">New Player</button>
     `;
