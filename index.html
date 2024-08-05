@@ -13,9 +13,9 @@
 <body>
 
    
-<!---4 Divs setup for Welcome, Capture User Details, Quiz and Results. Only one  div will display at a time-->
+<!---3 Divs setup for Welcome, Capture User Details and Quiz + Results. Only one  div will display at a time-->
 
-<!---Welcome Box Div 1 of 4 -->
+<!---Welcome Box Div 1 of 3 -->
     <div id="welcome" class="centerContainer">
         <div class="titleBox">
             <img src="assets/images/quizlogo.png"> <h2>Risky Quizness</h2>
@@ -38,7 +38,7 @@
     
    </div> 
 
-<!---Capture User Details Div 2 Of 4-->
+<!---Capture User Details Div 2 Of 3-->
 
     <div id="user_signup" class="centerContainer">
         <div class="titleBox">
@@ -51,7 +51,7 @@
         </div>
     </div>
 
-<!---Quiz Running Div 3 of 4-->
+<!---Quiz Running Div 3 of 3-->
     <div id="active_quiz" class="centerContainer">
         
         <div class="titleBox">
@@ -81,15 +81,7 @@
         
     </div>
 
-<!---Results Div 4 of 4--->
-    <div id="resultsDisplay" class="centerContainer">
-        <div class="titleBox">
-            <img src="assets/images/quizlogo.png"> <h2>Risky Quizness</h2>
-        </div>
-        <div id="results">
-            <!-- Results from quiz shown here within the Results Div that will only appear when quiz finished -->
-        </div>
-    </div>
+
 
 
 <!-- Overview Modal -->
@@ -99,18 +91,20 @@
     <div class="modal-content">
       <span class="close">X</span>
       <p>How To Play</p>
-      <p>Each game consists of 5 questions.</p>
-      <p>You will be given a clue to the type of question or category of the next question.</p>
-      <p>From there, you can pick how many seconds you think you will need to answer</p>
-      <p>The lower the time, the more points you can earn</p>
+      <p>Each game consists of 10 questions.</p>
+      <p>You start off with 100 points in the bank.</p>
+      <p>Each right answer is worth 20 points.</p>
+      <p>But each wrong answer loses 10 points.</p>
+      <p>You can play it safe and pass on any question for 5 points.</p>
+      <p>The risk is yours to take!</p>
     </div>
   
   </div>
-
+<!--These buttons will be removed from final presentation-->
  <button id="btn_welcome">Welcome Page</button>
  <button id="btn_signup">Signup Page</button>
  <button id="btn_quiz">Quiz Page</button>
- <button id="btn_results">Results Page</button>
+ 
     <script src="assets/javascript/script.js"></script>
 </body>
 </html>

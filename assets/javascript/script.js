@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
       welcomeDiv.style.display = "flex"
       signupDiv.style.display = "none";
       quizDiv.style.display = "none";
-      resultsDiv.style.display = "none";
+     
   }
   
   /* Runs this first so other divs are hidden on page load */
@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
       welcomeDiv.style.display = "none"
       signupDiv.style.display = "flex";
       quizDiv.style.display = "none";
-      resultsDiv.style.display = "none";
+     
   }
   
   let btn2 = document.getElementById("btn_signup");
@@ -55,21 +55,13 @@ document.addEventListener('DOMContentLoaded', () => {
       welcomeDiv.style.display = "none"
       signupDiv.style.display = "none";
       quizDiv.style.display = "flex";
-      resultsDiv.style.display = "none";
+    
   }
   
   let btn3 = document.getElementById("btn_quiz");
   btn3.addEventListener("click", displayQuiz);
   
-  function displayResults (){
-      welcomeDiv.style.display = "none"
-      signupDiv.style.display = "none";
-      quizDiv.style.display = "none";
-      resultsDiv.style.display = "flex";
-  }
-  
-  let btn4 = document.getElementById("btn_results");
-  btn4.addEventListener("click", displayResults);
+ 
   
   // Modal for introduction and overview
   var modal = document.getElementById("overviewModal");
@@ -142,6 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function setNextQuestion() {
     resetState();
     showQuestion(shuffledQuestions[currentQuestionIndex]);
+    document.getElementById("welcomePlayer").innerHTML = "Remember - A pass is better than a wrong answer."
   }
   
   function resetState() {
@@ -189,21 +182,21 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   
 
-/* Set up Scoring - 20 points for a correct answer, -5 points for a wrong answer */
+/* Set up Scoring - 20 points for a correct answer, -10 points for a wrong answer */
 
     const correct = selectedButton.dataset.correct;
     if (correct) {
         score = score+20;}
-    else score = score-5;
+    else score = score-10;
     
     setStatusClass(selectedButton, correct);
 
     /* Set up scoring for pressing Pass button 
-    A pass is worth 5 points but is set as 10 to override the -5 from not getting answer correct above*/
+    A pass is worth 5 points but is set as 15to override the -10 from not getting answer correct above*/
 
     const pass = selectedButton.dataset.pass;
     if (pass)
-        score=score+10;
+        score=score+15;
     
 
     /* Set a small delay before next button displays and quiz finish is called if last question
@@ -237,7 +230,7 @@ document.addEventListener('DOMContentLoaded', () => {
     element.classList.remove('wrong');
   }
   
-  /* End of quiz function - hide questions and show results div */
+  /* End of quiz function - hide questions and show results in a created element */
   
   function concludeQuiz() {
     questionContainerElement.classList.add('hide');
@@ -247,7 +240,7 @@ document.addEventListener('DOMContentLoaded', () => {
     resultsElement.classList.remove('hide');
     resultsElement.innerHTML = `
         <h3>Quiz Completed!</h3>
-        <p>You scored: ${score} out of a possible 200</p>
+        <p>You scored: ${score} out of a possible 160</p>
         <button class="restartButton" onclick="restartQuiz()">Restart Quiz</button>
        
     `;
@@ -280,7 +273,7 @@ document.addEventListener('DOMContentLoaded', () => {
             { text: 'Paris', correct: true },
             { text: 'Madrid', correct: false },
             { text: 'Berlin', correct: false },
-            { text: 'Pass', pass: true } 
+            { text: 'Pass (5 Points)', pass: true } 
         ]
     },
     {
@@ -290,7 +283,7 @@ document.addEventListener('DOMContentLoaded', () => {
             { text: 'Jupiter', correct: false },
             { text: 'Mars', correct: true },
             { text: 'Saturn', correct: false },
-            { text: 'Pass', pass: true } 
+            { text: 'Pass (5 Points)', pass: true } 
         ]
     },
     {
@@ -300,7 +293,7 @@ document.addEventListener('DOMContentLoaded', () => {
             { text: 'Charles Dickens', correct: false },
             { text: 'Mark Twain', correct: false },
             { text: 'J.K. Rowling', correct: false },
-            { text: 'Pass', pass: true } 
+            { text: 'Pass (5 Points)', pass: true } 
         ]
     },
     {
@@ -310,7 +303,7 @@ document.addEventListener('DOMContentLoaded', () => {
             { text: 'Giraffe', correct: false },
             { text: 'Hippopotamus', correct: false },
             { text: 'Blue Whale', correct: true },
-            { text: 'Pass', pass: true } 
+            { text: 'Pass (5 Points)', pass: true } 
         ]
     },
     {
@@ -320,7 +313,7 @@ document.addEventListener('DOMContentLoaded', () => {
             { text: '2', correct: true },
             { text: '3', correct: false },
             { text: '5', correct: false },
-            { text: 'Pass'}
+            { text: 'Pass (5 Points)', pass: true}
         ]
     },
     {
@@ -330,7 +323,7 @@ document.addEventListener('DOMContentLoaded', () => {
             { text: 'H2O', correct: true },
             { text: 'CO2', correct: false },
             { text: 'HO', correct: false },
-            { text: 'Pass', pass: true } 
+            { text: 'Pass (5 Points)', pass: true } 
         ]
     },
     {
@@ -340,7 +333,7 @@ document.addEventListener('DOMContentLoaded', () => {
             { text: 'Vincent van Gogh', correct: false },
             { text: 'Pablo Picasso', correct: false },
             { text: 'Michelangelo', correct: false },
-            { text: 'Pass', pass: true } 
+            { text: 'Pass (5 Points)', pass: true } 
         ]
     },
     {
@@ -350,7 +343,7 @@ document.addEventListener('DOMContentLoaded', () => {
             { text: 'Oxygen', correct: false },
             { text: 'Hydrogen', correct: true },
             { text: 'Carbon', correct: false },
-            { text: 'Pass', pass: true } 
+            { text: 'Pass (5 Points)', pass: true } 
         ]
     },
     {
@@ -360,7 +353,7 @@ document.addEventListener('DOMContentLoaded', () => {
             { text: 'Nile', correct: true },
             { text: 'Yangtze', correct: false },
             { text: 'Mississippi', correct: false },
-            { text: 'Pass', pass: true } 
+            { text: 'Pass (5 Points)', pass: true } 
         ]
     },
     {
@@ -370,7 +363,7 @@ document.addEventListener('DOMContentLoaded', () => {
             { text: 'Japan', correct: true },
             { text: 'South Korea', correct: false },
             { text: 'Thailand', correct: false },
-            { text: 'Pass', pass: true } 
+            { text: 'Pass (5 Points)', pass: true } 
         ]
     },
     {
@@ -380,7 +373,7 @@ document.addEventListener('DOMContentLoaded', () => {
             { text: 'George Washington', correct: true },
             { text: 'Abraham Lincoln', correct: false },
             { text: 'John Adams', correct: false },
-            { text: 'Pass', pass: true } 
+            { text: 'Pass (5 Points)', pass: true } 
         ]
     },
     {
@@ -390,7 +383,7 @@ document.addEventListener('DOMContentLoaded', () => {
             { text: '7', correct: false },
             { text: '8', correct: true },
             { text: '9', correct: false },
-            { text: 'Pass', pass: true } 
+            { text: 'Pass (5 Points)', pass: true } 
         ]
     },
     {
@@ -400,7 +393,7 @@ document.addEventListener('DOMContentLoaded', () => {
             { text: 'Indian Ocean', correct: false },
             { text: 'Arctic Ocean', correct: false },
             { text: 'Pacific Ocean', correct: true },
-            { text: 'Pass', pass: true } 
+            { text: 'Pass (5 Points)', pass: true } 
         ]
     },
     {
@@ -410,7 +403,7 @@ document.addEventListener('DOMContentLoaded', () => {
             { text: 'Yen', correct: true },
             { text: 'Euro', correct: false },
             { text: 'Pound', correct: false },
-            { text: 'Pass', pass: true } 
+            { text: 'Pass (5 Points)', pass: true } 
         ]
     },
     {
@@ -420,7 +413,7 @@ document.addEventListener('DOMContentLoaded', () => {
             { text: 'Africa', correct: true },
             { text: 'South America', correct: false },
             { text: 'Australia', correct: false },
-            { text: 'Pass', pass: true } 
+            { text: 'Pass (5 Points)', pass: true } 
         ]
     },
     {
@@ -430,7 +423,7 @@ document.addEventListener('DOMContentLoaded', () => {
             { text: 'Albert Einstein', correct: false },
             { text: 'Isaac Newton', correct: false },
             { text: 'Nikola Tesla', correct: false },
-            { text: 'Pass', pass: true } 
+            { text: 'Pass (5 Points)', pass: true } 
         ]
     },
     {
@@ -440,7 +433,7 @@ document.addEventListener('DOMContentLoaded', () => {
             { text: '0', correct: true },
             { text: '100', correct: false },
             { text: '-1', correct: false },
-            { text: 'Pass', pass: true } 
+            { text: 'Pass (5 Points)', pass: true } 
         ]
     },
     {
@@ -450,7 +443,7 @@ document.addEventListener('DOMContentLoaded', () => {
             { text: 'Ernest Hemingway', correct: false },
             { text: 'Harper Lee', correct: true },
             { text: 'John Steinbeck', correct: false },
-            { text: 'Pass', pass: true } 
+            { text: 'Pass (5 Points)', pass: true } 
         ]
     },
     {
@@ -460,7 +453,7 @@ document.addEventListener('DOMContentLoaded', () => {
             { text: 'Nitrogen', correct: true },
             { text: 'Carbon Dioxide', correct: false },
             { text: 'Argon', correct: false },
-            { text: 'Pass', pass: true } 
+            { text: 'Pass (5 Points)', pass: true } 
         ]
     },
     {
@@ -470,7 +463,7 @@ document.addEventListener('DOMContentLoaded', () => {
             { text: 'Venus', correct: false },
             { text: 'Earth', correct: false },
             { text: 'Mars', correct: false },
-            { text: 'Pass', pass: true } 
+            { text: 'Pass (5 Points)', pass: true } 
         ]
     }
   ];
