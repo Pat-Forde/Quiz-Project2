@@ -32,17 +32,68 @@ From the available choices I decided to build a quiz for this project. I wanted 
 ### Design
 
 From the outset I wished to provide a quiz game that would have an element of strategy or risk. I settled on the concept of penalising wrong answers whilst offering the user the chance to play it safe on a question they did not know the answer to.  
-I wanted to present the site on one page with no links using Javascript to manipulate the display for ease of usage and simplicity for the player.
+I wanted to present the site on one page with no links using Javascript to manipulate the display for ease of usage and simplicity for the player. 
+
+### Wireframes
+
+![](assets/images/readme-images/mockflow1.png)
+![](assets/images/readme-images/mockflow2.png)
+![](assets/images/readme-images/mockflow3.png)
+
 
 The entire quiz is hosted within one page. There are three divs of which only one will display at any time. There is a welcome / landing page div, a user signup div and a quiz div. Within the quiz div itself Javascript is further used to display or not display elements such as questions and results. 
 
 
-**Process Notes**
 
-**Testing**
+
+## Testing ##
 
 Testing was carried out along the build with a mid way cut off point / test undertaken for the core 3 divs, testing at each stage of the quiz build and a full test procedure carried out upon completion.  
 
+ **Links and user inputs**
+  | Test |Outcome  |
+  |--|--|
+  |Modal for overview of rules loads. | Pass  |
+  |Modal closes when X clicked and also when clicked outside of modal.| Pass |
+  |Get started button hides welcome div and displays signup div. | Pass |
+  |Username input is stored and called without error during the quiz.| Pass |
+  |Questions display correctly.| Pass |
+  |Points scoring working accurately. |Pass|
+  |Correct answers highlighted.|Pass|
+  |Restart quiz function works correctly.|Pass|
+  |Reset / New player function works correctly.|Pass|
+
+  **Responsiveness**
+  | Test |Outcome  |
+  |--|--|
+  |Display correctly on mobile device 320px wide| Pass |
+  |Display correctly on tablet 768px wide| Pass |
+  |Display correctly on laptop 1280px wide| Pass |
+  |Display correctly on desktop 1600px wide| Pass |
+  |Logo text removed on mobile devices | Pass |
+
+
+
+
+
+
+## Validation Testing 
+
+- HTML
+No errors as per W3C Validator  
+![](assets/images/readme-images/htmlvalidator.png)
+[W3C validator Home Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fpat-forde.github.io%2FQuiz-Project2%2F)   
+  
+- CSS
+No errors as per W3C CSS Jigsaw Validator
+![](assets/images/readme-images/cssvalidation.png)  
+[(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fpat-forde.github.io%2FQuiz-Project2%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+
+## Lighthouse Testing
+
+![](assets/images/readme-images/lighthouse.png)
+Lighthouse testing returns high scores across all metrics.
+  
 
 
 ## Deployment
