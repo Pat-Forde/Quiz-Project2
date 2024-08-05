@@ -66,6 +66,19 @@ body {
     background-color: white;
   }
 
+  .error {
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    height: 400px;
+    width: 70%;
+    border-radius: 8px;
+    border: 1px solid black;
+    background-color: white;
+  }
+
   /* Quiz Div 3 slightly amended styling */
   .quizBox {
     display: flex;
