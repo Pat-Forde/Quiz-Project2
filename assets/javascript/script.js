@@ -193,6 +193,7 @@ var input = document.getElementById("myInput");
     setTimeout(() => {
         if (10 > currentQuestionIndex + 1) {
             nextButton.classList.remove('hide');
+            document.getElementById("welcomePlayer").innerHTML = "Your current score is " +score + " points"
         } else {
             concludeQuiz();
         }
