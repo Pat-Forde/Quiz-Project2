@@ -242,7 +242,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <h3>Quiz Completed!</h3>
         <p>You scored: ${score} out of a possible 160</p>
         <button class="restartButton" onclick="restartQuiz()">Restart Quiz</button>
-       
+        <button class="restartButton" onclick="resetQuiz()">New Player</button>
     `;
     quizAppElement.appendChild(resultsElement);
   }
@@ -257,11 +257,16 @@ document.addEventListener('DOMContentLoaded', () => {
     welcomePlayer.classList.remove('hide');
     let playerName = document.getElementById("playerName").value;
     document.getElementById("welcomePlayer").innerHTML = "Welcome back "  + playerName + ". "
-
-
   }
   
-  
+  function resetQuiz() {
+    resultsElement.classList.add('hide');
+    score = 100;
+    currentQuestionIndex = 0;
+    startGame();
+    welcomePlayer.classList.remove('hide');
+    displayWelcome();
+  }
   
   /* Quiz Questions */
   
