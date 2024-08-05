@@ -13,7 +13,6 @@
 <body>
 <!-- centerContainer is where all content is displayed-->
     <div id="welcome" class="centerContainer">
-
         <div class="titleBox">
             <img src="assets/images/quizlogo.png"> <h2>Risky Quizness</h2>
         </div>
@@ -34,34 +33,27 @@
                 </div>
             </div>
         </div>
-       
-    
    </div> 
 
 <!---Capture User Details Div 2 Of 3-->
-
     <div id="user_signup" class="centerContainer">
         <div class="titleBox">
             <img src="assets/images/quizlogo.png"> <h2>Risky Quizness</h2>
         </div>
         <div class="welcomeBox">
             <div id="signupHeader"><h1>Please Enter Your Name!</h1></div>
-            <div id="nameInput">First Name: <input type="text" id="playerName" > <button onclick="nameEntered()" class="welcomeButton">Submit</button></div>
-           
+            <div id="nameInput">First Name: <input type="text" id="playerName" > <button onclick="nameEntered()" class="welcomeButton">Submit</button></div>        
         </div>
     </div>
 
 <!---Quiz Running Div 3 of 3-->
-    <div id="active_quiz" class="centerContainer">
-        
+    <div id="active_quiz" class="centerContainer">       
         <div class="titleBox">
             <img src="assets/images/quizlogo.png"> <h2>Risky Quizness</h2>
-        </div>
-        
+        </div>      
         <div class="quizBox">
             <div id="userMessage"><p id="welcomePlayer"></p></div>
-            <div id="quiz-app">
-                
+            <div id="quiz-app">              
                 <div id="question-container">
                     <div id="question">Click Start when you are ready - Good Luck!</div>
                     <div id="answer-buttons" class="btn-grid">
@@ -72,17 +64,9 @@
                     <button id="start-btn">Start</button>
                     <button id="next-btn">Next</button>
                 </div>
-                <div id="results">
-                    <!-- Results will be shown here -->
-                </div>
             </div>
-
-        </div>
-        
+        </div>      
     </div>
-
-
-
 
 <!-- Overview Modal -->
 <div id="overviewModal" class="modal">
@@ -97,14 +81,9 @@
       <p>But each wrong answer loses 10 points.</p>
       <p>You can play it safe and pass on any question for 5 points.</p>
       <p>The risk is yours to take!</p>
-    </div>
-  
+    </div> 
   </div>
-<!--These buttons will be removed from final presentation-->
- <button id="btn_welcome">Welcome Page</button>
- <button id="btn_signup">Signup Page</button>
- <button id="btn_quiz">Quiz Page</button>
- 
+
     <script src="assets/javascript/script.js"></script>
 </body>
 </html>
