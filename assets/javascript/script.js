@@ -138,19 +138,25 @@ document.addEventListener('DOMContentLoaded', () => {
   Create a button display for each answer.
   Assign a data attribute to button with correct answer for evaluation.
   Add an event listener to each button to handle answer selection.
+  Add a class to answer buttons and a different class to pass button for css styling
   */
   
   function showQuestion(question) {
     questionElement.innerText = question.question;
     question.answers.forEach(answer => {
         const button = document.createElement('button');
-        button.innerText = answer.text;
-        button.classList.add('btn');
+        button.innerText = answer.text;  
+
+        if (answer.pass) {
+        button.classList.add('btnPass');
+        button.dataset.pass = answer.pass;
+        }
+        else {
+            button.classList.add('btn');
+            }
+        
         if (answer.correct) {
             button.dataset.correct = answer.correct;
-        }
-        if (answer.pass) {
-            button.dataset.pass = answer.pass;
         }
         button.addEventListener('click', () => selectAnswer(button));
         answerButtonsElement.appendChild(button);

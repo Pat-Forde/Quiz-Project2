@@ -248,6 +248,20 @@ input[type=text] {
   transition: background-color 0.3s;
 }
 
+.btnPass {
+  padding: 10px 15px;
+  margin-left: 5px;
+  margin-right: 5px;
+  background-color: #29e83f;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+
+
 .quizButton:hover {
   background-color: #6969f3;
 }
