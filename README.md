@@ -39,7 +39,7 @@ I wanted to present the site on one page with no links using Javascript to manip
 ![](assets/images/readme-images/mockflow2.png)
 ![](assets/images/readme-images/mockflow3.png)
 
-## User Flow
+### User Flow
 The entire quiz is hosted within one page. There are three divs of which only one will display at any time. There is a welcome / landing page div, a user signup div and a quiz div. Within the quiz div itself Javascript is further used to display or not display elements such as questions and results. 
 
 **Welcome View**
