@@ -80,10 +80,12 @@ document.addEventListener('DOMContentLoaded', () => {
   let btnStart = document.getElementById("btn_register");
   btnStart.addEventListener("click", displaySignup);
 
-  /*  Stores player name and displays it at top of quiz  */
+  /*  Stores player name and displays it at top of quiz 
+  If player attempts to skip alerts to enter a name */
   function nameEntered () {
   let playerName = document.getElementById("playerName").value;
-  displayQuiz ();
+  if (playerName == "") { alert("Please enter a name")}
+  else displayQuiz ();
   document.getElementById("welcomePlayer").innerHTML = "It's great to have you here "  + playerName + ". ";
   }
 
