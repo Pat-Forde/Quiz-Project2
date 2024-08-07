@@ -56,16 +56,16 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   
   // Modal for introduction and overview
-  var modal = document.getElementById("overviewModal");
+  let modal = document.getElementById("overviewModal");
   
   // Modal Opening triggered by button press in welcome div
-  var btnModal = document.getElementById("btn_rules");
+  let btnModal = document.getElementById("btn_rules");
   btnModal.onclick = function() {
     modal.style.display = "block";
   };
   
   // Modal closes when clicking on the span containing the X
-  var spanModalClose = document.getElementsByClassName("close")[0];
+  let spanModalClose = document.getElementsByClassName("close")[0];
   spanModalClose.onclick = function() {
     modal.style.display = "none";
   };
@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
   function startGame() {
     startButton.classList.add('hide');
-    shuffledQuestions = questions.sort(() => Math.random() - .5);
+    shuffledQuestions = questions.sort(() => Math.random() - 0.5);
     currentQuestionIndex = 0;
     questionContainerElement.classList.remove('hide');
     setNextQuestion();
@@ -232,7 +232,7 @@ document.addEventListener('DOMContentLoaded', () => {
     startGame();
     welcomePlayer.classList.remove('hide');
     let playerName = document.getElementById("playerName").value;
-    document.getElementById("welcomePlayer").innerHTML = "Welcome back "  + playerName + ". "
+    document.getElementById("welcomePlayer").innerHTML = "Welcome back "  + playerName + ". ";
   }
   
   function resetQuiz() {
