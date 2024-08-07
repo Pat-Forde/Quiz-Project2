@@ -40,8 +40,41 @@ I wanted to present the site on one page with no links using Javascript to manip
 ![](assets/images/readme-images/mockflow2.png)
 ![](assets/images/readme-images/mockflow3.png)
 
-
+## User Flow
 The entire quiz is hosted within one page. There are three divs of which only one will display at any time. There is a welcome / landing page div, a user signup div and a quiz div. Within the quiz div itself Javascript is further used to display or not display elements such as questions and results. 
+
+**Welcome View**
+
+![](assets/images/readme-images/userflow1.png)  
+The user is presented with a welcome screen from which they can choose to get an overview of the rules or to start a game.
+
+**Overview**
+![](assets/images/readme-images/userflow2.png)
+Overview displays as a modal over the page. 
+
+**Username Entry**
+![](assets/images/readme-images/userflow3.png)  
+User name is captured and stored for future reference.
+
+**Good Luck Message**
+![](assets/images/readme-images/userflow4.png)  
+A good luck message is displayed and quiz starts when start is pressed.
+
+**Questions**
+![](assets/images/readme-images/userflow5.png)  
+![](assets/images/readme-images/userflow6.png)  
+Each question has 4 answers along with an option to pass if not sure of the answer. Pass option is highlighted in different colour to other options. The user welcome message is replaced with quiz related messages and current scoring.
+
+**Answer Feedback**
+![](assets/images/readme-images/userflow7.png) 
+After each answer the correct answer is highlighted.
+
+**End Quiz**
+![](assets/images/readme-images/userflow8.png)  
+Score is given along with options to restart with current player or go back to main page to register a new player.
+
+
+
 
 
 
