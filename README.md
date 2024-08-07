@@ -7,7 +7,6 @@ This website is a fun and quick quiz page with a bit of a twist!
 
 ## **[Live site](https://pat-forde.github.io/Quiz-Project2/)**
 
-
 ## **[Repository](https://github.com/Pat-Forde/Quiz-Project2)**
 
 ## UX 
@@ -54,11 +53,11 @@ Overview displays as a modal over the page.
 
 **Username Entry**
 ![](assets/images/readme-images/userflow3.png)  
-User name is captured and stored for future reference.
+The welcome div is hidden and replaced with a second div to capture the users name. This is stored for future reference.
 
 **Good Luck Message**
 ![](assets/images/readme-images/userflow4.png)  
-A good luck message is displayed and quiz starts when start is pressed.
+The user name entry div is also hidden and replaced with a third div which contains the quiz structure. A good luck message is displayed and quiz starts when start is pressed.
 
 **Questions**
 ![](assets/images/readme-images/userflow5.png)  
@@ -72,12 +71,6 @@ After each answer the correct answer is highlighted.
 **End Quiz**
 ![](assets/images/readme-images/userflow8.png)  
 Score is given along with options to restart with current player or go back to main page to register a new player.
-
-
-
-
-
-
 
 ## Testing ##
 
@@ -106,11 +99,7 @@ Testing was carried out along the build with a mid way cut off point / test unde
   |Logo text removed on mobile devices | Pass |
 
 
-
-
-
-
-## Validation Testing 
+### Validation Testing 
 
 - HTML
 No errors as per W3C Validator  
@@ -122,14 +111,12 @@ No errors as per W3C CSS Jigsaw Validator
 ![](assets/images/readme-images/cssvalidation.png)  
 [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fpat-forde.github.io%2FQuiz-Project2%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
 
-## Lighthouse Testing
+### Lighthouse Testing
 
-![](assets/images/readme-images/lighthouse.png)
+![](assets/images/readme-images/lighthouse.png)  
 Lighthouse testing returns high scores across all metrics.
-  
 
-
-## Deployment
+### Deployment
 
 To deploy the project I followed the steps below starting from the [main project repository](https://github.com/Pat-Forde/Quiz-Project2).
 
@@ -142,8 +129,15 @@ To deploy the project I followed the steps below starting from the [main project
   The project was then deployed.
   
 
-**Credits**
-Modal for rules overview learned from w3 schools.   
-Quiz format based from an approach taught by Robert Jones **[Robert Johns Tutorial](https://hackr.io/blog/how-to-build-a-javascript-quiz-app)**
+## Credits ##
++ Modal for rules overview learned from w3 schools.   
++ Quiz format based from an approach taught by Robert Jones **[Robert Johns Tutorial](https://hackr.io/blog/how-to-build-a-javascript-quiz-app)**
++ Quiz Logo designed at design.com.
++ Font supplied by Google Fonts
++ Further learning and support from Code Institute Slack Channels, Stackoverflow.com, Flexboxfroggy.com.  
+
+## Thank You
+  
+A huge thank you to my Code Institute mentor Alan Bushell for his patience, guidance, support, encouragement and overall mentorship during this project.
 
 

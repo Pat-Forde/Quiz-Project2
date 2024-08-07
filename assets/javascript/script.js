@@ -84,8 +84,11 @@ document.addEventListener('DOMContentLoaded', () => {
   If player attempts to skip alerts to enter a name */
   function nameEntered () {
   let playerName = document.getElementById("playerName").value;
-  if (playerName == "") { alert("Please enter a name")}
-  else displayQuiz ();
+  if (playerName === "") {
+    alert("Please enter a name");
+} else {
+    displayQuiz();
+}
   document.getElementById("welcomePlayer").innerHTML = "It's great to have you here "  + playerName + ". ";
   }
 
